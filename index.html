@@ -9,6 +9,12 @@
 </head>
 <body>
     <h1>Jogo do Bicho Sim.</h1>
+    <div class="containerInputs">
+        <label for="nome">Sala <span>*</span></label>
+        <input type="text" placeholder="Nome da Sala" id="sala">
+        <label for="senha">Senha <span>*</span></label>
+        <input type="password" placeholder="Senha da Sala" id="senha">         
+    </div>
     <div id="container">
         <div class="row">
             <div class="animal"><div class="num">1</div><img src="" alt=""></div>
@@ -46,13 +52,7 @@
             <div class="animal"><div class="num">25</div><img src="" alt=""></div>
         </div>
     </div>
-    <div class="containerInputs">
-        <label for="nome">Sala <span>*</span></label>
-        <input type="text" placeholder="Nome da Sala" id="sala">
-        <label for="senha">Senha <span>*</span></label>
-        <input type="password" placeholder="Senha da Sala" id="senha">  
-        <button id='criar' disabled="disabled">Criar</button>       
-    </div>
+    <button id='criar' disabled="disabled">Criar</button>
     
 <script src="main.js"></script>
 </body>

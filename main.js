@@ -5,8 +5,10 @@ const sala = document.getElementById('sala');
 const senha = document.getElementById('senha');
 const btn = document.getElementById('criar')
 
+
 const inputsHaveValues = () =>{
-    return !!sala.value && !!senha.value
+    let animalsSelected = [...animals].filter(e => e.classList.contains('isSelected'))
+    return !!sala.value && !!senha.value && animalsSelected.length > 0;
 }
 container.addEventListener('click', e =>{
     let animal = e.target;
@@ -23,6 +25,7 @@ container.addEventListener('click', e =>{
     }else if(animalsSelected.length > 0){
         animalsSelected[0].classList.toggle('isSelected');
     }
+    btn.disabled = !inputsHaveValues()
 })
 
 body.addEventListener('click', e =>{
@@ -31,6 +34,7 @@ body.addEventListener('click', e =>{
     let isInput = where == sala || where == senha;
     if(!where.classList.contains('animal') && animalsSelected.length > 0 && !isInput){
         animalsSelected[0].classList.toggle('isSelected');
+        btn.disabled = !inputsHaveValues()
     }
 })
 
